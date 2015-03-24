@@ -15,6 +15,8 @@ class RockPaperScissorsViewController: UIViewController {
     @IBOutlet weak var scissorsButton: UIButton!
     var match: RPSMatch!
     
+    var history = [RPSMatch]()
+    
     @IBAction func makeYourMove(sender: UIButton) {
         // Here the RPS enum holds a player's move
         switch (sender) {
@@ -34,41 +36,35 @@ class RockPaperScissorsViewController: UIViewController {
 
     func throwDown(playersMove: RPS)
     {
-        // Here the RPS enum generates the opponent's move
         let computersMove = RPS()
+        let match = RPSMatch(p1: playersMove, p2: computersMove)
         
-        // =The RPSMatch struct stores the results of a match
-        self.match = RPSMatch(p1: playersMove, p2: computersMove)
+        // Add match to the history
+        history.append(match)
         
-        //Here are the 3 ways of presenting a View Controller
+        // Get the Storyboard and ResultViewController
+        var storyboard = UIStoryboard (name: "Main", bundle: nil)
+        var resultVC = storyboard.instantiateViewControllerWithIdentifier("ResultViewController") as ResultViewController
         
-        // 1st Way: Programmatic View Controller Presentation
-        if (playersMove == RPS.Rock) {
-            // Get the storyboard and ResultViewController
-            var storyboard = UIStoryboard (name: "Main", bundle: nil)
-            var resultVC = storyboard.instantiateViewControllerWithIdentifier("ResultViewController") as ResultViewController
-            
-            // Communicate the match
-            resultVC.match = self.match
-            self.presentViewController(resultVC, animated: true, completion: nil)
-        }
-            
-            // 2nd Way: Code plus Segue
-        else if (playersMove == RPS.Paper) {
-            performSegueWithIdentifier("throwDownPaper", sender: self)
-        }
+        // Communicate the match to the ResultViewController
+        resultVC.match = match
         
-        
-        // 3rd Way: Segue Only, No code!
-        // But don't forget to implement prepareForSegue.
-    }
+        self.presentViewController(resultVC, animated: true, completion: nil)    }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        //Notice that this code works for both Scissors and Paper
-        let controller = segue.destinationViewController as ResultViewController
-        controller.match = self.match
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        //Notice that this code works for both Scissors and Paper
+//        let controller = segue.destinationViewController as ResultViewController
+//        controller.match = self.match
+//    }
     
+    @IBAction func showHistory(sender: AnyObject) {
+        let storyboard = self.storyboard
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController") as HistoryViewController
+        
+        controller.history = self.history
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
 }
 

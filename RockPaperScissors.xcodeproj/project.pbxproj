@@ -16,6 +16,7 @@
 		A8C362781AB8D17100FB0BBF /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C362771AB8D17100FB0BBF /* ResultViewController.swift */; };
 		A8C3627A1AB8F4DA00FB0BBF /* RPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C362791AB8F4DA00FB0BBF /* RPS.swift */; };
 		A8C3627C1AB8F51E00FB0BBF /* RPSMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3627B1AB8F51E00FB0BBF /* RPSMatch.swift */; };
+		A8C362801ABBEB7B00FB0BBF /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3627F1ABBEB7B00FB0BBF /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		A8C362771AB8D17100FB0BBF /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A8C362791AB8F4DA00FB0BBF /* RPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPS.swift; sourceTree = "<group>"; };
 		A8C3627B1AB8F51E00FB0BBF /* RPSMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPSMatch.swift; sourceTree = "<group>"; };
+		A8C3627F1ABBEB7B00FB0BBF /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				A8C362771AB8D17100FB0BBF /* ResultViewController.swift */,
 				A8C362601AB8CDF700FB0BBF /* LaunchScreen.xib */,
 				A8C362551AB8CDF700FB0BBF /* Supporting Files */,
+				A8C3627F1ABBEB7B00FB0BBF /* HistoryViewController.swift */,
 			);
 			path = RockPaperScissors;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				A8C3625A1AB8CDF700FB0BBF /* RockPaperScissorsViewController.swift in Sources */,
 				A8C3627A1AB8F4DA00FB0BBF /* RPS.swift in Sources */,
 				A8C362581AB8CDF700FB0BBF /* AppDelegate.swift in Sources */,
+				A8C362801ABBEB7B00FB0BBF /* HistoryViewController.swift in Sources */,
 				A8C362781AB8D17100FB0BBF /* ResultViewController.swift in Sources */,
 				A8C3627C1AB8F51E00FB0BBF /* RPSMatch.swift in Sources */,
 			);
@@ -417,6 +421,7 @@
 				A8C362731AB8CDF700FB0BBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8C362741AB8CDF700FB0BBF /* Build configuration list for PBXNativeTarget "RockPaperScissorsTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				A8C362761AB8CDF700FB0BBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
